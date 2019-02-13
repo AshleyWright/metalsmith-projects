@@ -1,0 +1,46 @@
+{
+  "name": "metalsmith-projects",
+  "version": "1.0.0",
+  "description": "A Metalsmith plugin for adding metadata for projects (think portfolio content) from GitHub or filesystem (through metalsmith-collections) that can be looped over for creating a portfolio of work.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pack build"
+  },
+  "keywords": ["metalsmith", "projects", "portfolio", "collection", "github"],
+  "author": "Ashley Wright",
+  "license": "MIT",
+  "devDependencies": {
+    "@pika/pack": "^0.3.1",
+    "@pika/plugin-build-deno": "^0.3.9",
+    "@pika/plugin-build-node": "^0.3.9",
+    "@pika/plugin-build-types": "^0.3.9",
+    "@pika/plugin-standard-pkg": "^0.3.9",
+    "@types/node": "^10.12.24",
+    "@types/ramda": "^0.25.48",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "prettier": "^1.16.4",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ],
+      [
+        "@pika/plugin-build-deno"
+      ],
+      [
+        "@pika/plugin-build-types"
+      ]
+    ]
+  },
+  "dependencies": {
+    "ramda": "^0.26.1",
+    "@octokit/rest": "^16.15.0"
+  }
+}

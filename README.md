@@ -14,6 +14,7 @@ There are currently two sources from which projects can be retrieved from:
  - collection: retrieves metadata from the front-matter of files under a specified collection.
 
 All sources add objects to the the metadata property `projects` of the form:
+
 | Property | Type |
 |---|---|
 | `name` | `String` |
@@ -24,6 +25,7 @@ All sources add objects to the the metadata property `projects` of the form:
 | `lastUpdated` | `Date` |
 | `languages` | `String[]` |
 | `url` | `String` |
+
 Multiple sources can be used simultaneously in the same call to `metalsmith-projects`.
 
 ### Source: GitHub

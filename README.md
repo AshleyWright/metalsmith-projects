@@ -8,7 +8,7 @@ A [Metalsmith](https://metalsmith.io/) plugin for adding metadata for *projects*
 $ npm install metalsmith-projects
 ```
 
-##Usage
+## Usage
 
 There are currently two sources from which projects can be retrieved from:
  - GitHub: retrieves metadata on all public non-fork repositories owned by the provided username, plus any specific additional repositories.

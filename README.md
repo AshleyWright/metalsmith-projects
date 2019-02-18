@@ -16,16 +16,17 @@ There are currently two sources from which projects can be retrieved from:
 
 All sources add objects to the the metadata property `projects` of the form:
 
-| Property | Type |
-|---|---|
-| `name` | `String` |
-| `owner` | `String` |
-| `fullName` | `String` |
-| `description` | `String` |
-| `stargazerCount` | `Number` |
-| `lastUpdated` | `Date` |
-| `languages` | `String[]` |
-| `url` | `String` |
+| Property         | Type       |
+| ---------------- | ---------- |
+| `name`           | `String`   |
+| `owner`          | `String`   |
+| `fullName`       | `String`   |
+| `description`    | `String`   |
+| `stargazerCount` | `Number`   |
+| `lastUpdated`    | `Date`     |
+| `languages`      | `String[]` |
+| `url`            | `String`   |
+
 
 Multiple sources can be used simultaneously in the same call to `metalsmith-projects`.
 
@@ -60,16 +61,17 @@ metalsmith.use(collections({
 ```
 The mapping of file front-matter to project metadata is as follows:
 
-| Project metadata | Frontmatter | Default Value |
-|---|---|---|
-| `name` | `projectName` or `title` | `"Unnamed"` |
-| `owner` | `owner` | `options.collection.defaultOwner` |
-| `fullName` | `projectFullName` or `title` | `"Unnamed"` |
-| `description` | `projectDescription` | `""` (the empty string) |
-| `stargazerCount` | `stargazerCount` | `0` |
-| `lastUpdated` | `lastUpdated` or `datePublished` | `undefined` |
-| `languages` | `projectLanguages` | `[]` |
-| `url` | `url` | `metadata.site.url + fileMetadata.path` |
+| Project metadata | Frontmatter                      | Default Value                           |
+| ---------------- | -------------------------------- | --------------------------------------- |
+| `name`           | `projectName` or `title`         | `"Unnamed"`                             |
+| `owner`          | `owner`                          | `options.collection.defaultOwner`       |
+| `fullName`       | `projectFullName` or `title`     | `"Unnamed"`                             |
+| `description`    | `projectDescription`             | `""` (the empty string)                 |
+| `stargazerCount` | `stargazerCount`                 | `0`                                     |
+| `lastUpdated`    | `lastUpdated` or `datePublished` | `undefined`                             |
+| `languages`      | `projectLanguages`               | `[]`                                    |
+| `url`            | `url`                            | `metadata.site.url + fileMetadata.path` |
+
 
 
 MIT &copy; Ashley Wright

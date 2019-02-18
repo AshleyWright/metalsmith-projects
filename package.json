@@ -4,10 +4,16 @@
   "description": "A Metalsmith plugin for adding metadata for projects (think portfolio content) from GitHub or filesystem (through metalsmith-collections) that can be looped over for creating a portfolio of work.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "build": "pack build"
   },
-  "keywords": ["metalsmith", "projects", "portfolio", "collection", "github"],
+  "keywords": [
+    "metalsmith",
+    "projects",
+    "portfolio",
+    "collection",
+    "github"
+  ],
   "author": "Ashley Wright",
   "license": "MIT",
   "devDependencies": {

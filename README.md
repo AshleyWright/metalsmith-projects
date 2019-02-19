@@ -1,6 +1,8 @@
 metalsmith-projects
 ============
 
+[![Build Status](https://travis-ci.org/AshleyWright/metalsmith-projects.svg?branch=master)](https://travis-ci.org/AshleyWright/metalsmith-projects)
+
 A [Metalsmith](https://metalsmith.io/) plugin for adding metadata for *projects* (think portfolio content) from GitHub or filesystem (through [metalsmith-collections](https://github.com/segmentio/metalsmith-collections)) that can be looped over for creating a portfolio of work.
 
 ## Installation

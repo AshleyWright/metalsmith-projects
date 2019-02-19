@@ -4,7 +4,7 @@
   "description": "A Metalsmith plugin for adding metadata for projects (think portfolio content) from GitHub or filesystem (through metalsmith-collections) that can be looped over for creating a portfolio of work.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "test": "TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\" }' mocha --require ts-node/register --watch-extensions ts '**/__tests__/**/*.spec.ts'",
     "build": "pack build"
   },
   "keywords": [
@@ -22,10 +22,18 @@
     "@pika/plugin-build-node": "^0.3.9",
     "@pika/plugin-build-types": "^0.3.9",
     "@pika/plugin-standard-pkg": "^0.3.9",
+    "@types/chai": "^4.1.7",
+    "@types/chai-as-promised": "^7.1.0",
+    "@types/jest": "^24.0.6",
+    "@types/mocha": "^5.2.6",
     "@types/node": "^10.12.24",
     "@types/ramda": "^0.25.48",
     "babel-plugin-add-module-exports": "^1.0.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^6.0.0",
     "prettier": "^1.16.4",
+    "ts-node": "^8.0.2",
     "tslint": "^5.12.1",
     "typescript": "^3.3.3"
   },

@@ -18,16 +18,17 @@ const defaultOptions = {
   exclude: []
 };
 
-let octokit;
-
-const getReposByOwner = async (owner: string): Promise<Partial<Repository>[]> =>
+export const getReposByOwner = async (
+  octokit,
+  owner: string
+): Promise<Partial<Repository>[]> =>
   (await octokit.repos.listForUser({
     username: owner,
     type: "owner"
   })).data;
-const filterNonForks = (repos: Partial<Repository>[]) =>
+export const filterNonForks = (repos: Partial<Repository>[]) =>
   R.filter((repo: Partial<Repository>) => !repo.fork, repos);
-const getRepositoriesByFullNames = (fullNames: string[]) =>
+export const getRepositoriesByFullNames = (octokit, fullNames: string[]) =>
   Promise.all(
     R.map(async (fullName: string): Promise<Partial<Repository>> => {
       const [owner, repoName] = fullName.split("/");
@@ -37,10 +38,13 @@ const getRepositoriesByFullNames = (fullNames: string[]) =>
       })).data;
     }, fullNames)
   ) as Promise<Partial<Repository>[]>;
-const filterOutByFullName = (fullNames: string[]) =>
+export const filterOutByFullName = (fullNames: string[]) =>
   R.filter((repo: Partial<Repository>) => !fullNames.includes(repo.full_name));
-const setLanguages = R.set(R.lensProp("languages"));
-const hydrateReposWithLanguages = (repos: Partial<Repository>[]) =>
+export const setLanguages = R.set(R.lensProp("languages"));
+export const hydrateReposWithLanguages = (
+  octokit,
+  repos: Partial<Repository>[]
+) =>
   Promise.all(
     R.map(
       async (repo: Partial<Repository>): Promise<Repository> =>
@@ -56,7 +60,7 @@ const hydrateReposWithLanguages = (repos: Partial<Repository>[]) =>
       repos
     )
   );
-const convertToProjectArray = R.map(
+export const convertToProjectArray = R.map(
   (repo: Repository): Project => ({
     owner: repo.owner.login,
     name: repo.name,
@@ -73,15 +77,21 @@ export async function getGithubProjects(opts: GithubProjectsOptions) {
   const options = R.merge(defaultOptions, opts);
   if (!options.username) throw "username undefined";
 
-  if (options.authToken) octokit = new Octokit({auth: `token ${options.authToken}`});
+  let octokit;
+  if (options.authToken)
+    octokit = new Octokit({ auth: `token ${options.authToken}` });
   else octokit = new Octokit();
 
   return convertToProjectArray(
     await hydrateReposWithLanguages(
+      octokit,
       filterOutByFullName(options.exclude)(
         R.concat<Partial<Repository>[]>(
-          filterNonForks(await getReposByOwner(options.username)),
-          (await getRepositoriesByFullNames(options.additionalRepos)) as any
+          filterNonForks(await getReposByOwner(octokit, options.username)),
+          (await getRepositoriesByFullNames(
+            octokit,
+            options.additionalRepos
+          )) as any
         )
       )
     )

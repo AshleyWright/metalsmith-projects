@@ -19,7 +19,7 @@
   "devDependencies": {
     "@pika/pack": "^0.3.1",
     "@pika/plugin-build-deno": "^0.5.0",
-    "@pika/plugin-build-node": "^0.3.9",
+    "@pika/plugin-build-node": "^0.5.1",
     "@pika/plugin-build-types": "^0.4.0",
     "@pika/plugin-standard-pkg": "^0.4.0",
     "@types/chai": "^4.1.7",

@@ -4,9 +4,6 @@ import {
   CollectionProjectsOptions
 } from "./sources/collection";
 
-import Octokit from "@octokit/rest";
-const octokit = new Octokit();
-
 export interface ProjectsOptions {
   github?: GithubProjectsOptions;
   collection?: CollectionProjectsOptions;
@@ -23,8 +20,8 @@ export interface Project {
   url: string;
 }
 
-export default function(opts: ProjectsOptions) {
-  return async function(files, metalsmith, done) {
+export default function (opts: ProjectsOptions) {
+  return async function (files, metalsmith, done) {
     const projects = [
       ...(await getGithubProjects(opts.github)),
       ...(await getCollectionProjects(opts.collection, metalsmith))

@@ -1,6 +1,6 @@
 import R from "ramda";
 import { Project } from "../index";
-import Octokit from "@octokit/rest";
+import { Octokit } from "@octokit/rest";
 
 type Repository = any;
 

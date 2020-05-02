@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-projects",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Metalsmith plugin for adding metadata for projects (think portfolio content) from GitHub or filesystem (through metalsmith-collections) that can be looped over for creating a portfolio of work.",
   "main": "index.js",
   "scripts": {
@@ -26,13 +26,13 @@
     "@types/chai-as-promised": "^7.1.0",
     "@types/jest": "^24.0.6",
     "@types/mocha": "^7.0.0",
-    "@types/node": "^12.0.0",
-    "@types/ramda": "^0.26.1",
+    "@types/ramda": "^0.27.0",
+    "@types/node": "^13.1.0",
     "babel-plugin-add-module-exports": "^1.0.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "mocha": "^6.0.0",
-    "prettier": "^1.16.4",
+    "prettier": "^2.0.0",
+    "mocha": "^7.0.1",
     "ts-node": "^8.0.2",
     "tslint": "^5.12.1",
     "typescript": "^3.3.3"
@@ -44,17 +44,11 @@
       ],
       [
         "@pika/plugin-build-node"
-      ],
-      [
-        "@pika/plugin-build-deno"
-      ],
-      [
-        "@pika/plugin-build-types"
       ]
     ]
   },
   "dependencies": {
     "ramda": "^0.26.1",
-    "@octokit/rest": "^16.28.1"
+    "@octokit/rest": "^17.0.0"
   }
 }

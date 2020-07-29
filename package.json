@@ -35,7 +35,7 @@
     "mocha": "^7.0.1",
     "ts-node": "^8.0.2",
     "tslint": "^5.12.1",
-    "typescript": "^3.3.3"
+    "typescript": "^3.8.3"
   },
   "@pika/pack": {
     "pipeline": [

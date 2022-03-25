@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\" }' mocha --require ts-node/register --watch-extensions ts '**/__tests__/**/*.spec.ts'",
-    "build": "pack build"
+    "build": "pack build",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "keywords": [
     "metalsmith",
@@ -49,6 +51,8 @@
   },
   "dependencies": {
     "ramda": "^0.27.0",
-    "@octokit/rest": "^17.0.0"
-  }
+    "@octokit/rest": "^17.0.0",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
